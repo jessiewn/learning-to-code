@@ -1,4 +1,5 @@
-height = input("what is your height\n")
+# height = input("what is your height\n")
+height = "2.1"
 type_of_height = type(height)
 a= type(type_of_height)
 print("height is ", height)

@@ -22,4 +22,4 @@ number_people_f=float(number_people)
 tip_in_per_f=float(tip_in_per)
 each_pay=total_bill_f*(1+tip_in_per_f)/number_people_f
 each_pay_r=round(each_pay,2)
-print(f'each one should pay{each_pay_r}')
+print(f'each one should pay{each_pay_r:.4f}')
