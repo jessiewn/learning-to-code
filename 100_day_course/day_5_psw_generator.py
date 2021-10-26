@@ -24,7 +24,7 @@ symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
 
 def print_choice(values):
     pick_number_symbol=random.randint(0,len(values))
-    print(values[pick_number_symbol])
+    #print(values[pick_number_symbol])
 
 
 
@@ -38,13 +38,13 @@ def choice(values):
     return  value
 
 x = choice(numbers)
-print(x)
+#print(x)
 
 x = choice(symbols)
-print(x)
+#print(x)
 
 x = choice(letters)
-print(x)
+#print(x)
 
 # print("Welcome to the PyPassword Generator!")
 
@@ -60,7 +60,7 @@ list_symbols=[]
 for n in range(0,nr_letters):
    x=choice(letters)
    list_letters.append(x)
-   print(choice(numbers))
+   #print(choice(numbers))
    y=choice(numbers)
    list_numbers.append(y)
    z=choice(symbols)
@@ -70,8 +70,14 @@ print(psw_list)
 str1=''.join(list_letters)
 str2=''.join(list_numbers)
 str3=''.join(list_symbols)
-print(str1+str2+str3)
-
+str_all=str1+str2+str3
+#print(str_all)
+new=list(str_all)
+#print(new)
+random.shuffle(new)
+#print(new)
+str_new=''.join(new)
+print(f'your password is {str_new}')
     
 
 #Eazy Level - Order not randomised:
