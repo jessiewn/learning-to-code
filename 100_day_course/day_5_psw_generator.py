@@ -66,7 +66,7 @@ for n in range(0,nr_letters):
    z=choice(symbols)
    list_symbols.append(z)
 psw_list=[list_letters,list_numbers,list_symbols]
-print(psw_list)
+#print(psw_list)
 str1=''.join(list_letters)
 str2=''.join(list_numbers)
 str3=''.join(list_symbols)
