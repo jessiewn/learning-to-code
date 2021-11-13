@@ -1,2 +1,5 @@
-for n in range(1,5):
-    print(n)
+name = input('what is your name')
+price=input('what is your bid')
+bid = {}
+bid[name]=price
+print(bid)

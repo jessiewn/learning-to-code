@@ -12,20 +12,20 @@
 import random
 from art import logo
 
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
+CARDS = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 player_cards=[]
 computer_cards=[]
 
 
 def add_cards_to_player():
-    a=random.choice(cards)
+    a=random.choice(CARDS)
     player_cards.append(a)
 
 def add_cards_to_computer():
-    a=random.choice(cards)
+    a=random.choice(CARDS)
     computer_cards.append(a)
 
-#def add_cards()
+def add_cards()
 
 
 def sum_score_player():
