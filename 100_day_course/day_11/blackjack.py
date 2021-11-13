@@ -13,8 +13,7 @@ import random
 from art import logo
 
 CARDS = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
-player_cards=[]
-computer_cards=[]
+
 
 
 def add_cards(cards):
@@ -31,10 +30,15 @@ def computer_play_randome():
     play=['y','n']
     return random.choice(play)
 
+def computer_continue():
+    play=[True,False]
+    return random.choice(play)
 
 
 
 def main():
+    player_cards=[]
+    computer_cards=[]
     play= input("Do you want to play a game of Blackjack? Type 'y' or 'n': Do you want to play a game of Blackjack? Type 'y' or 'n': ")
     if play == 'n':
         return
@@ -59,7 +63,7 @@ def main():
                 break
         while True:
             computer_choice=computer_play_randome()
-            print(computer_choice)
+            #print(computer_choice)
             if computer_choice == 'y':
                 add_cards(computer_cards)
                 print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
