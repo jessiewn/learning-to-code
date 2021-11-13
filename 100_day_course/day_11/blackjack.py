@@ -17,31 +17,15 @@ player_cards=[]
 computer_cards=[]
 
 
-def add_cards_to_player():
+def add_cards(cards):
     a=random.choice(CARDS)
-    player_cards.append(a)
+    cards.append(a)
 
-def add_cards_to_computer():
-    a=random.choice(CARDS)
-    computer_cards.append(a)
-
-def add_cards()
-
-
-def sum_score_player():
+def sum_score(cards):
     total_score=0
-    for i in player_cards:
-        total_score = total_score+i
+    for i in cards:
+        total_score+=i
     return total_score
-
-
-def sum_score_computer():
-    total_score=0
-    for i in computer_cards:
-        total_score = total_score+i
-    return total_score
-    
-
 
 def computer_play_randome():
     play=['y','n']
@@ -56,19 +40,19 @@ def main():
         return
     if play == 'y':
         print(logo)
-        add_cards_to_player()
-        add_cards_to_player()
-        add_cards_to_computer()
-        add_cards_to_computer()
-        print(f'Your cards:{player_cards},curent score:{sum_score_player()}')
+        add_cards(player_cards)
+        add_cards(player_cards)
+        add_cards(computer_cards)
+        add_cards(computer_cards)
+        print(f'Your cards:{player_cards},curent score:{sum_score(player_cards)}')
         print(f"computer's first card is {computer_cards[0]}")
         
         while True:
             continue_play=input("Type 'y' to get another card, type 'n' to pass:")
             if continue_play == 'y':
-                add_cards_to_player()
-                print(f'Your cards:{player_cards},curent score:{sum_score_player()}')
-                if sum_score_player() > 21:
+                add_cards(player_cards)
+                print(f'Your cards:{player_cards},curent score:{sum_score(player_cards)}')
+                if sum_score(player_cards) > 21:
                     print('you lose')
                     break
             if continue_play == 'n':
@@ -77,17 +61,17 @@ def main():
             computer_choice=computer_play_randome()
             print(computer_choice)
             if computer_choice == 'y':
-                add_cards_to_computer()
-                print(f'Computer cards:{computer_cards},computer score:{sum_score_computer()}')
-                if sum_score_computer() > 21:
+                add_cards(computer_cards)
+                print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
+                if sum_score(computer_cards) > 21:
                     print('player win')
                     break
             if computer_choice == 'n':
                 break
 
-        if sum_score_player() > sum_score_computer():
+        if sum_score(player_cards) > sum_score(computer_cards):
             print('you win')
-        elif sum_score_player()<sum_score_computer():
+        elif sum_score(player_cards)<sum_score(computer_cards):
             print('youlose')
         else:
             print('it is a draw')
