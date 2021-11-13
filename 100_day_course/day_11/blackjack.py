@@ -25,6 +25,8 @@ def add_cards_to_computer():
     a=random.choice(cards)
     computer_cards.append(a)
 
+#def add_cards()
+
 
 def sum_score_player():
     total_score=0
@@ -38,14 +40,6 @@ def sum_score_computer():
     for i in computer_cards:
         total_score = total_score+i
     return total_score
-
-def player_play():
-    add_cards_to_player()
-    sum_score_player()
-
-def computer_play():
-    add_cards_to_computer()
-    sum_score_computer()
     
 
 
@@ -72,7 +66,7 @@ def main():
         while True:
             continue_play=input("Type 'y' to get another card, type 'n' to pass:")
             if continue_play == 'y':
-                player_play()
+                add_cards_to_player()
                 print(f'Your cards:{player_cards},curent score:{sum_score_player()}')
                 if sum_score_player() > 21:
                     print('you lose')
@@ -83,7 +77,7 @@ def main():
             computer_choice=computer_play_randome()
             print(computer_choice)
             if computer_choice == 'y':
-                computer_play()
+                add_cards_to_computer()
                 print(f'Computer cards:{computer_cards},computer score:{sum_score_computer()}')
                 if sum_score_computer() > 21:
                     print('player win')
