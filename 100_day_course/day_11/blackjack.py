@@ -66,6 +66,11 @@ def main():
                 if sum_score(player_cards) > 21:
                     print('you lose')
                     break
+                if sum_score(player_cards) ==21:
+                    print('you win')
+                    break
+
+
             if continue_play == 'n':
                 break
         while True:
@@ -73,23 +78,23 @@ def main():
             #print(computer_choice)
             if computer_choice == 'y':
                 add_cards(computer_cards)
-                print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
                 if sum_score(computer_cards) > 21:
                     print('player win')
                     break
             if computer_choice == 'n':
                 break
-                    
-        if sum_score(player_cards) > sum_score(computer_cards):
+        if sum_score(player_cards)<21 and sum_score(computer_cards)<21 and sum_score(player_cards) > sum_score(computer_cards):
             print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
             print('player win')
-        elif sum_score(player_cards)<sum_score(computer_cards):
+        elif sum_score(player_cards)<21 and sum_score(computer_cards)<21 and sum_score(player_cards)<sum_score(computer_cards):
             print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
             print('player lose')
-        else:
+        elif sum_score(player_cards)<21 and sum_score(computer_cards)<21 and sum_score(player_cards) == sum_score(computer_cards):
             print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
             print('it is a draw')
 
+
+    
 
 
 main()
