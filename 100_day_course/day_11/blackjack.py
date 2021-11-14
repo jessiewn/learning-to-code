@@ -21,10 +21,17 @@ def add_cards(cards):
     cards.append(a)
 
 def sum_score(cards):
-    total_score=0
-    for i in cards:
-        total_score+=i
-    return total_score
+    total=0
+    for card in cards:
+        if card != 11:
+            card_score = card
+        else:
+            if total+11>21:
+                card_score=1
+            else:
+                card_score=11
+        total+=card_score
+    return total
 
 def computer_play_randome():
     play=['y','n']
@@ -72,12 +79,15 @@ def main():
                     break
             if computer_choice == 'n':
                 break
-
+                    
         if sum_score(player_cards) > sum_score(computer_cards):
-            print('you win')
+            print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
+            print('player win')
         elif sum_score(player_cards)<sum_score(computer_cards):
-            print('youlose')
+            print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
+            print('player lose')
         else:
+            print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
             print('it is a draw')
 
 
