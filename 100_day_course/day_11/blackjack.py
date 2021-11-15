@@ -57,6 +57,10 @@ def main():
         add_cards(computer_cards)
         print(f'Your cards:{player_cards},curent score:{sum_score(player_cards)}')
         print(f"computer's first card is {computer_cards[0]}")
+        if sum_score(player_cards)== 21:
+            print(f'your score is {sum_score(player_cards)},you win')
+        elif sum_score(computer_cards)==21:
+            print(f'computer score is {sum_score(computer_cards)},you lose')
         
         while True:
             continue_play=input("Type 'y' to get another card, type 'n' to pass:")
@@ -69,20 +73,18 @@ def main():
                 if sum_score(player_cards) ==21:
                     print('you win')
                     break
-
-
             if continue_play == 'n':
                 break
         while True:
-            computer_choice=computer_play_randome()
-            #print(computer_choice)
-            if computer_choice == 'y':
+            if sum_score(computer_cards)<17:
                 add_cards(computer_cards)
-                if sum_score(computer_cards) > 21:
-                    print('player win')
-                    break
-            if computer_choice == 'n':
+            elif sum_score(computer_cards) > 21:
+                print(f'computer cards {computer_cards}, computer score is {sum_score(computer_cards)}')
+                print('player win')
                 break
+            else:
+                break
+            
         if sum_score(player_cards)<21 and sum_score(computer_cards)<21 and sum_score(player_cards) > sum_score(computer_cards):
             print(f'Computer cards:{computer_cards},computer score:{sum_score(computer_cards)}')
             print('player win')
