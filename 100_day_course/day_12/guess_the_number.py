@@ -11,18 +11,13 @@ def compare(guess):
     elif guess==RANDOM_NUMBER:
         print(f'You got it! The answer was {RANDOM_NUMBER}.')
         return
-def game(times):
-    while True:
-        break_out_of_while = False
-        for i in range(times):
-            print(f'You have {times} attempts remaining to guess the number.')
-            guess=int(input('make a guess'))
-            compare(guess)
-            times -= 1
-            if guess == RANDOM_NUMBER:
-                break_out_of_while=True
-                break
-        if break_out_of_while:
+def game(times):   
+    for i in range(times):
+        print(f'You have {times} attempts remaining to guess the number.')
+        guess=int(input('make a guess'))
+        compare(guess)
+        times -= 1
+        if guess == RANDOM_NUMBER:
             break
         
 def main():
