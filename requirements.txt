@@ -1,0 +1,4 @@
+prettytable==2.4.0
+colorgram.py==1.2.0
+mypy
+pylint

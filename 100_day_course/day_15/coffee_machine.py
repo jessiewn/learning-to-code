@@ -82,7 +82,7 @@ def main():
             if check_resource(ask)==True:
                 if process_coins(ask)!=False:
                     make_coffee(ask)
-                    print(f"here is your {ask},please enjoy it")
+                    print(f"here is your {ask}☕️,please enjoy it")
         elif ask == "off":
             return
 main()
