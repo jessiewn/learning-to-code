@@ -10,6 +10,14 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "Day 24 - Main",
+            "type": "python",
+            "request": "launch",
+            "program": "main.py",
+            "console": "integratedTerminal",
+            "cwd" : "${workspaceFolder}/100_day_course/day_24",
         }
     ]
 }

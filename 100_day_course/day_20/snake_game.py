@@ -17,7 +17,7 @@ scoreboad=Scoreboard()
 game_is_on=True
 while game_is_on:
     screen.update()
-    time.sleep(0.02)
+    time.sleep(0.1)
     snake.move()
     screen.listen()
     
@@ -27,18 +27,18 @@ while game_is_on:
         scoreboad.scoreboard()
         snake.extend()
 
-    #detect collision with wall
-    # if snake.head.xcor()>280 or snake.head.xcor()<-280 or snake.head.ycor()>280 or snake.head.ycor()<-280:
-    #     game_is_on=False
-    #     scoreboad.game_over()
+  
+    if snake.head.xcor()>280 or snake.head.xcor()<-280 or snake.head.ycor()>280 or snake.head.ycor()<-280:
+        scoreboad.reset()
+        snake.reset()
 
 
     # detect collision with tail
     #if head collide with any segment of the tail: trigger game_over
     for segment in snake.segments[1:]:
         if snake.head.distance(segment)<10:
-            game_is_on=False
-            scoreboad.game_over()
+            scoreboad.reset()
+            snake.reset()
 
 
 screen.exitonclick()
